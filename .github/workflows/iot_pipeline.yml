@@ -1,0 +1,39 @@
+name: IoT ESP32 Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  esp32-test:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install robotframework pyserial
+
+    - name: Compile ESP32
+      run: |
+        robot --variable EXEC_STEP:compile iot_pipeline.robot
+
+    - name: Flash ESP32
+      run: |
+        robot --variable EXEC_STEP:flash iot_pipeline.robot
+
+    - name: Validate Temperature
+      run: |
+        robot --variable EXEC_STEP:temperature iot_pipeline.robot
+
+    - name: Validate Wi-Fi RSSI
+      run: |
+        robot --variable EXEC_STEP:wifi iot_pipeline.robot
+
+    - name: Generate Robot Framework Report
+      run: |
+        echo "Tests finished. See output.xml, log.html, report.html"
