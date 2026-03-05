@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-03-05T14:52:11.363676" rpa="false" schemaversion="5">
+<suite id="s1" name="Iot Pipeline" source="C:\Users\a7577\Desktop\tem_montior_pc\iot_pipeline.robot">
+<test id="s1-t1" name="Compile ESP" line="6">
+<kw name="Compile Esp" owner="mqtt_library">
+<doc>Compile the ESP32 sketch</doc>
+<status status="PASS" start="2026-03-05T14:52:11.412145" elapsed="19.061239"/>
+</kw>
+<doc>Compile the ESP32 sketch</doc>
+<status status="PASS" start="2026-03-05T14:52:11.411282" elapsed="19.062872"/>
+</test>
+<test id="s1-t2" name="Flash ESP" line="10">
+<kw name="Flash Esp" owner="mqtt_library">
+<doc>Upload the compiled sketch to ESP32</doc>
+<status status="PASS" start="2026-03-05T14:52:30.475967" elapsed="15.425021"/>
+</kw>
+<doc>Upload the sketch to ESP32</doc>
+<status status="PASS" start="2026-03-05T14:52:30.475196" elapsed="15.426693"/>
+</test>
+<test id="s1-t3" name="Temperature Validation" line="14">
+<kw name="Validate Temperature" owner="mqtt_library">
+<doc>Check if ESP32 is sending valid temperature</doc>
+<status status="PASS" start="2026-03-05T14:52:45.904467" elapsed="13.491471"/>
+</kw>
+<doc>Validate real temperature from ESP</doc>
+<status status="PASS" start="2026-03-05T14:52:45.903577" elapsed="13.493101"/>
+</test>
+<test id="s1-t4" name="Wi-Fi RSSI Validation" line="18">
+<kw name="Validate Wifi" owner="mqtt_library">
+<doc>Check if Wi-Fi RSSI is valid. Fail if internet is down.</doc>
+<status status="PASS" start="2026-03-05T14:52:59.399631" elapsed="0.070892"/>
+</kw>
+<doc>Validate Wi-Fi strength (fails if internet is off)</doc>
+<status status="PASS" start="2026-03-05T14:52:59.398443" elapsed="0.072872"/>
+</test>
+<status status="PASS" start="2026-03-05T14:52:11.365246" elapsed="48.108475"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Iot Pipeline" id="s1" pass="4" fail="0" skip="0">Iot Pipeline</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
